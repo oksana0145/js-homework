@@ -79,6 +79,26 @@ if (hour >= 0 && hour < 6) {
 // 6. Маючи число в змінній, виведи в консоль 'fizz' (кратне 3), 'buzz' (кратне 5), 
 // 'fizzbuzz' (кратне обом) або саме число.
 
+let numb5 = 16;
 
+if ((numb5 % 3) === 0 && (numb5 % 5) === 0) {
+    console.log("fizzbuzz")
+} else if ((numb5 % 3) === 0) {
+    console.log("fizz")
+} else if ((numb5 % 5) === 0) {
+    console.log("buzz")
+} else {
+    console.log("invalid number: " + numb5)
+}
 
-// 7. Маючи дві змінні-числа a і b, виведи в консоль їх суму, різницю, добуток і залишок від ділення.
+//=====================================
+// 7. Маючи дві змінні-числа a і b, виведи в консоль їх суму, різницю, добуток 
+// і залишок від ділення.
+
+let numb3 = 0;
+let numb4 = 0;
+
+console.log(numb3 + numb4);
+console.log(numb3 - numb4);
+console.log(numb3 * numb4);
+console.log(numb3 % numb4);
