@@ -76,7 +76,7 @@ const email = "";
 const password = "bt";
 
 if (email !== "" && password !== "") {
-    console.log("Дані введено")
+    console.log("Дані введені")
 } else {
     console.log("Заповніть усі поля")
 };
