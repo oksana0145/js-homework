@@ -1,23 +1,22 @@
 // 1. Перепиши вираз 'Привіт, ' + name + '!' через шаблонні рядки.
-
-let name = "Marta";
-console.log(`Hello ${name}!`)
+const name = "Марта";
+console.log(`Привіт ${name}!`)
 
 //=================================
 // 2. Створи змінні firstName і lastName та виведи в консоль рядок 
 // 'Повне ім'я: ...' через ${}.
 
-let firstName = "Valentyna";
-let lastName = "Tymchenko";
+const firstName = "Валентина";
+const lastName = "Тумченко";
 
-console.log(`Full name: ${firstName} ${lastName}`);
+console.log(`Повне ім'я: ${firstName} ${lastName}`);
 
 //=================================
 // 3. Маючи ціну price і кількість qty, виведи рядок 'Сума: ${price * qty} грн' з 
 // обчисленням усередині ${}.
 
-let price = 10;
-let qty = 2;
+const price = 10;
+const qty = 2;
 
 console.log(`Сума: ${price * qty} грн`);
 
@@ -25,10 +24,10 @@ console.log(`Сума: ${price * qty} грн`);
 // 4. Створи багаторядковий рядок (наприклад, адресу з кількох рядків), використовуючи 
 // зворотні лапки.
 
-let homeAdress = `місто: Львів;
+const homeAddress = `місто: Львів;
 вулиця: Трускавецька;
 будинок: 32;
 квартира: 5;
 індекс: 380-643;`
 
-console.log(homeAdress);
+console.log(homeAddress);
