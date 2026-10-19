@@ -26,7 +26,7 @@ console.log("       Task 3:");
 
 let sum = 0;
 for (let i = 1; i <= 20; i++){
-    if (i % 2 == 0) {
+    if (i % 2 === 0) {
         sum += i;
     }}
 console.log(sum);
@@ -38,7 +38,7 @@ console.log("       Task 4:");
 // ==============================
 // 4. Виведи в консоль таблицю множення для числа 5 (for).
 for (let i = 1; i <= 10; i++) {
-        console.log(i * 5);
+        console.log(`${i} x 5 = ${i * 5}`);
 } 
 
 
@@ -72,7 +72,7 @@ console.log("           while:")
 // ==============================
 
 
-let count1 = 0
+let count1 = 5;
 while (count1 < 5) {
     console.log(count1);
     count1++;
@@ -84,7 +84,7 @@ console.log("           do ... while:");
 // ==============================
 
 
-let count2 = 0; 
+let count2 = 5;; 
 do {
 count2++;
 console.log(count2)} 
