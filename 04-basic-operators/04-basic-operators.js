@@ -6,19 +6,27 @@
  у наведеному нижче прикладі:
  перший console.log = true, тому що тип даних рядок перетворився на число
  другий console.log = false, тому що не відбулось перетворення типу даних*/
+console.log("   Task 1:");
+//=====================================
 
-let a = 5;
-let b = "5";
+const a = 5;
+const b = "5";
 console.log(a == b);
 console.log(a === b);
 
-//=====================================
-// 2. Маючи число в змінній, виведи в консоль true, якщо воно парне, і false — якщо ні (оператор %).
 
-let number = 3;
+
+//=====================================
+// 2. Маючи число в змінній, виведи в консоль true, якщо воно парне, 
+// і false — якщо ні (оператор %).
+console.log("   Task 2:");
+//=====================================
+
+const number = 3;
 
 //solution1
-let isEvenNumb = number % 2 ? console.log("не парне число") : console.log("парне число");
+const isEvenNumb = number % 2 ? "не парне число" : "парне число";
+console.log(isEvenNumb);
 
 ///solution2
 console.log(number % 2);
@@ -30,56 +38,78 @@ if (number % 2) {
     console.log("парне число")
 };
 
+// solution4
+console.log(number % 2 === 0);
+
+
+
 //=====================================
 // 3. Створи дві змінні з числами та виведи в консоль, яке з них більше (оператори порівняння).
+console.log("   Task 3:");
+//=====================================
 
 //solution1
-let numb1 = 10;
-let numb2 = 5;
+const numb1 = 10;
+const numb2 = 10;
+
 if (numb1 > numb2){
     console.log(`${numb1}`)
-} else {
+} else if (numb1 < numb2) {
     console.log(`${numb2}`)
+} else {
+    console.log("числа рівні")
 };
 
 // //solution2
-let result = numb1 > numb2 ? console.log(`${numb1}`) : console.log(`${numb2}`);
+const result = numb1 > numb2 ? numb1 : numb1 < numb2 ? numb2 : "числа рівні";
+console.log(result);
+
+
 
 //=====================================
 // 4. Маючи змінні email і password, виведи в консоль 'Дані введені',
 //  якщо обидві не порожні, інакше 'Заповніть усі поля' (логічні оператори).
+console.log("   Task 4:");
+//=====================================
 
-let email = "";
-let password =  "";
-if (!email == "" && !password == "" || !email == null && !password == null) {
-    console.log("Дані введено")
+const email = "";
+const password = "bt";
+
+if (email !== "" && password !== "") {
+    console.log("Дані введені")
 } else {
-    console.log("Введіть дані")
+    console.log("Заповніть усі поля")
 };
+
+
 
 //=====================================
 // 5. Маючи змінну hour (0–23), виведи в консоль 'Ніч', 'Ранок', 'День' або 'Вечір' 
 // через if/else.
-
-let hour = 24;
+console.log("   Task 5:");
+//=====================================
+const hour = 23;
 
 if (hour >= 0 && hour < 6) {
-    console.log("Night")
+    console.log("Ніч")
 } else if (hour >= 6 && hour < 12) {
-    console.log("Morning")
+    console.log("Ранок")
 } else if (hour >= 12 && hour < 18) {
-    console.log("Day") 
+    console.log("День") 
 } else if (hour >= 18 && hour <= 23 ) {
-    console.log("Evening")
+    console.log("Вечір")
 } else {
-    console.log("not day hours")
+    console.log("Не година дня")
 };
+
+
 
 //=====================================
 // 6. Маючи число в змінній, виведи в консоль 'fizz' (кратне 3), 'buzz' (кратне 5), 
 // 'fizzbuzz' (кратне обом) або саме число.
-
-let numb5 = 16;
+console.log("   Task 6:");
+//=====================================
+const numb5 = 15;
 
 if ((numb5 % 3) === 0 && (numb5 % 5) === 0) {
     console.log("fizzbuzz")
@@ -88,15 +118,18 @@ if ((numb5 % 3) === 0 && (numb5 % 5) === 0) {
 } else if ((numb5 % 5) === 0) {
     console.log("buzz")
 } else {
-    console.log("invalid number: " + numb5)
+    console.log(numb5)
 }
+
+
 
 //=====================================
 // 7. Маючи дві змінні-числа a і b, виведи в консоль їх суму, різницю, добуток 
 // і залишок від ділення.
-
-let numb3 = 0;
-let numb4 = 0;
+console.log("   Task 7:");
+//=====================================
+const numb3 = 2;
+const numb4 = 5;
 
 console.log(numb3 + numb4);
 console.log(numb3 - numb4);
