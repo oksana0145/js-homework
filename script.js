@@ -2,3 +2,5 @@
 // import "./05-template-literals/05-template-literals.js";
 // import "./07-switch-case/07-switch-case.js";
 // import "./08-functions/08-functions.js";
+// import "./live-coding/topics-3-7.js";
+// import "./06-loop/06-loop.js"
