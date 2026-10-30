@@ -2,6 +2,8 @@
 // Кожне завдання — у своєму блоці { }, щоб змінні з різних завдань не конфліктували
 
 // ===== 1.1 · Квиток — ✅ пройдено
+console.log("     Task: 1.1")
+//================================
 {
   const age = 10;
   const price = 100;
@@ -13,6 +15,8 @@
 }
 
 // ===== 1.2 · Зірочки — ✅ пройдено
+console.log("     Task: 1.2")
+//================================
 {
   const n = 5;
   let star = "";
@@ -25,6 +29,8 @@
 }
 
 // ===== 1.3 · Оцінка словами — ✅ пройдено
+console.log("     Task: 1.3")
+//================================
 {
   const grade = "B";
 
@@ -49,6 +55,8 @@
 }
 
 // ===== 1.4 · Парне? — ✅ пройдено
+console.log("     Task: 1.4")
+//================================
 {
   function isEven(n) {
   return n % 2 === 0
@@ -60,6 +68,8 @@
 }
 
 // ===== 1.5 · Двічі (бонус) — ✅ пройдено
+console.log("     Task: 1.5")
+//================================
 {
   const square = (x) => x * x;
 
@@ -81,6 +91,8 @@
 //   console.log(pet.color);
 
 // ===== 2.2 · Прочитай з об'єкта — ✅ пройдено
+console.log("     Task: 2.2")
+//================================
 {
   const movie = { title: "Тіні забутих предків", year: 1965 };
 
@@ -89,6 +101,8 @@
 }
 
 // ===== 2.3 · Створи сам — ✅ пройдено
+console.log("     Task: 2.3")
+//================================
 {
   const phone = {
   brand: "Samsung",
@@ -102,6 +116,8 @@
 }
 
 // ===== 2.4 · Зміни й додай — ✅ пройдено
+console.log("     Task: 2.4")
+//================================
 {
   const student = { name: "Оля", course: 1 };
   student.course = 2;
@@ -115,6 +131,8 @@
 }
 
 // ===== 2.5 · Видали й перевір — ✅ пройдено
+console.log("     Task: 2.5")
+//================================
 {
   const account = { login: "olya", password: "1234", email: "olya@mail.com" };
   delete account.password;
@@ -134,6 +152,8 @@
 //   console.log(car["brand"]);
 
 // ===== 2.7 · Словник — ✅ пройдено
+console.log("     Task: 2.7")
+//================================
 {
   const dictionary = { cat: "кіт", dog: "пес", bird: "птах" };
 
@@ -153,11 +173,13 @@
 }
 
 // ===== 2.8 · Меню кав'ярні — ✅ пройдено
+console.log("     Task: 2.8")
+//================================
 {
   const prices = { coffee: 65, tea: 45, cake: 90 };
   let sum = 0;
-  for (product in prices) {
-  console.log(`${[product]}: ${prices[product]} грн`)
+  for (let product in prices) {
+  console.log(`${product}: ${prices[product]} грн`)
   sum += prices[product]
   }
   console.log(`Разом: ${sum} грн`)
@@ -167,6 +189,8 @@
 }
 
 // ===== 2.9 · Функція отримує об'єкт — ✅ пройдено
+console.log("     Task: 2.9")
+//================================
 {
   function describe(person) {
 
@@ -179,11 +203,13 @@
 }
 
 // ===== 2.10 · Функція створює об'єкт (бонус) — ✅ пройдено
+console.log("     Task: 2.10")
+//================================
 {
   function createUser(name, age) { return { 
   name,
   age,
-  isAdult: (age < 18) ? false : true,
+  isAdult: age > 18,
    }; }
 
   const user = createUser("Марко", 16);
@@ -257,13 +283,13 @@
 
 // ===== 3.6 · Чому метод не стрілка (бонус) — ✅ пройдено
 // Мій прогноз: Оля | undefined
-  const user = {
-    firstName: "Оля",
-    regular() {
-      return this.firstName;
-    },
-    arrow: () => this.firstName,
-  };
+  // const user = {
+  //   firstName: "Оля",
+  //   regular() {
+  //     return this.firstName;
+  //   },
+  //   arrow: () => this.firstName,
+  // };
   
-  console.log(user.regular());
-  console.log(user.arrow());
+  // console.log(user.regular());
+  // console.log(user.arrow());

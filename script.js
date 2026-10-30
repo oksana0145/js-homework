@@ -6,4 +6,4 @@
 // import "./09-arrow-functions/09-arrow-functions.js";
 // import "./live-coding/topics-3-7.js";
 
-import "./practice/objects.js";
+// import "./practice/objects.js";
