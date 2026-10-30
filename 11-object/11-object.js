@@ -1,5 +1,5 @@
 // ============================
-console.log("       Tack: 1");
+console.log("       Task: 1");
 // ============================
 // 1. Створи об'єкт user з полями name, age та методом greet(), який через this виводить у 
 // консоль 'Привіт, я '.
@@ -17,7 +17,7 @@ user.greet();
 
 
 // ============================
-console.log("       Tack: 2");
+console.log("       Task: 2");
 // ============================
 // 2. Створи об'єкт-калькулятор з методами add, subtract, multiply, divide, що працюють 
 // із двома переданими числами (результат у консоль).
@@ -37,15 +37,15 @@ const calculator = {
     },
 }
 
-calculator.add(2, 2);
-calculator.subtract(2, 2);
-calculator.multiply(2, 2);
-calculator.divide(2, 2);
+calculator.add(6, 2);
+calculator.subtract(6, 2);
+calculator.multiply(6, 2);
+calculator.divide(6, 2);
 
 
 
 // ============================
-console.log("       Tack: 3");
+console.log("       Task: 3");
 // ============================
 // 3. Створи об'єкт 'рахунок' з полем balance і методами deposit(sum) та withdraw(sum), 
 // що оновлюють this.balance. Виведи баланс у консоль.
@@ -59,20 +59,27 @@ const account = {
        console.log(this.balance);
     },
     withdraw(amount) {
+        if (amount <= this.balance) {
         this.balance = this.balance - amount;
         console.log(this.balance);
+    } else {
+        console.log("Balance is too small");
+    }
     },
 }
 
 console.log(account.balance);
 account.deposit(200);
 console.log(account.balance);
+account.withdraw(1200);
+console.log(account.balance);
 account.withdraw(100);
+console.log(account.balance)
 
 
 
 // ============================
-console.log("       Tack: 4");
+console.log("       Task: 4");
 // ============================
 // 4. Створи об'єкт 'прямокутник' з полями width, height і методами area() та perimeter(), 
 // що використовують this.
@@ -98,7 +105,7 @@ rectangle.perimeter()
 
 
 // ============================
-console.log("       Tack: 5");
+console.log("       Task: 5");
 // ============================
 // 5. Поясни, що таке this всередині методу об'єкта і чому стрілкова функція як метод 
 // поводиться інакше.
