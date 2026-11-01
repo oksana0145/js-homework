@@ -178,7 +178,7 @@ console.log("     Task: 2.8")
 {
   const prices = { coffee: 65, tea: 45, cake: 90 };
   let sum = 0;
-  for (let product in prices) {
+  for (const product in prices) {
   console.log(`${product}: ${prices[product]} грн`)
   sum += prices[product]
   }
