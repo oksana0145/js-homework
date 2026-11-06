@@ -4,7 +4,7 @@
 // ===== 1.1 · Індекси і length — ✅ пройдено
 // Мій прогноз: червоний | undefined | 3 | синій
 //   const colors = ["червоний", "зелений", "синій"];
-//   
+//
 //   console.log(colors[0]);
 //   console.log(colors[3]);
 //   console.log(colors.length);
@@ -13,10 +13,10 @@
 // ===== 1.2 · push і pop — ✅ пройдено
 // Мій прогноз: 3 | сир | ["хліб", "молоко"]
 //   const list = ["хліб", "молоко"];
-//   
+//
 //   list.push("сир");
 //   console.log(list.length);
-//   
+//
 //   const last = list.pop();
 //   console.log(last);
 //   console.log(list);
@@ -27,7 +27,6 @@
 
   queue.push("Марта");
   const served = queue.shift();
-
 
   // TODO: Марта стає в кінець черги
   // TODO: забери першого з черги і збережи його в змінну served
@@ -40,8 +39,8 @@
 {
   const pets = ["кіт", "пес", "папуга"];
 
-  for (const pet of pets){
-  console.log(pet);
+  for (const pet of pets) {
+    console.log(pet);
   }
 
   // TODO: for...of
@@ -50,7 +49,7 @@
 // ===== 1.5 · Цикл з індексом — ✅ пройдено
 // Мій прогноз: 0: яблуко | 1: груша | 2: слива
 //   const fruits = ["яблуко", "груша", "слива"];
-//   
+//
 //   for (let i = 0; i < fruits.length; i++) {
 //     console.log(i + ": " + fruits[i]);
 //   }
@@ -75,14 +74,12 @@
 
   let sumExp = 0;
 
-  for (let expens of expenses){
-  sumExp += expens
-  };
+  for (let expens of expenses) {
+    sumExp += expens;
+  }
 
   console.log(`Витрачено: ${sumExp} грн`);
   console.log(`Залишок: ${budget - sumExp} грн`);
-
-
 
   // TODO: сума витрат через for...of
   // TODO: виведи "Витрачено: ... грн" і "Залишок: ... грн"
@@ -94,10 +91,10 @@
 
   let coldDay = 0;
 
-  for (let temp of temps){
-  if(temp < 0) {
-  coldDay = coldDay + 1;
-  }
+  for (let temp of temps) {
+    if (temp < 0) {
+      coldDay = coldDay + 1;
+    }
   }
 
   console.log(`Морозних днів: ${coldDay}`);
@@ -109,8 +106,8 @@
   const prices = [100, 250, 80];
   const doubled = [];
 
-  for(let price of prices) {
-  doubled.push(price * 2)
+  for (let price of prices) {
+    doubled.push(price * 2);
   }
   // TODO: for...of + push
 
@@ -123,9 +120,9 @@
   const big = [];
 
   for (let numb of numbers) {
-  if (numb > 6) {
-  big.push(numb)
-  }
+    if (numb > 6) {
+      big.push(numb);
+    }
   }
   // TODO: for...of + if + push
 
@@ -141,7 +138,7 @@
   ];
 
   for (let product of menu) {
-  console.log(`${product.name}: ${product.price} грн`)
+    console.log(`${product.name}: ${product.price} грн`);
   }
 
   // TODO: for...of — виведи "назва: ціна грн"
@@ -151,7 +148,7 @@
 // Мій прогноз: [2, 4, 6] | [1, 2, 3]
 //   const nums = [1, 2, 3];
 //   const doubled = nums.map((n) => n * 2);
-//   
+//
 //   console.log(doubled);
 //   console.log(nums);
 
@@ -176,7 +173,7 @@
 // ===== 2.4 · find чи filter — ✅ пройдено
 // Мій прогноз: 8 | [8, 12] | undefined
 //   const nums = [3, 8, 12, 5];
-//   
+//
 //   console.log(nums.find((n) => n > 6));
 //   console.log(nums.filter((n) => n > 6));
 //   console.log(nums.find((n) => n > 100));
@@ -189,8 +186,8 @@
     { name: "Марта", age: 30 },
   ];
 
-  const adults = users.filter(user => user.age >= 18);
-  const name = adults.map(userName => userName.name);
+  const adults = users.filter((user) => user.age >= 18);
+  const name = adults.map((userName) => userName.name);
   const joinName = name.join(", ");
 
   // TODO: імена через map, рядок через join(", ")
@@ -201,7 +198,7 @@
 // ===== 2.6 · Пастка sort — ✅ пройдено
 // Мій прогноз: [1, 10, 100, 5]
 //   const nums = [10, 1, 5, 100];
-//   
+//
 //   nums.sort();
 //   console.log(nums);
 
@@ -213,13 +210,12 @@
     { name: "Вода", price: 20 },
   ];
 
-  products.sort((product1, product2) => product1.price - product2.price)
+  products.sort((product1, product2) => product1.price - product2.price);
 
-  const productsUpdate = products.map(product => product.name);
+  const productsUpdate = products.map((product) => product.name);
   const stringProducts = productsUpdate.join(", ");
 
   console.log(stringProducts);
-
 
   // TODO: sort за ціною
   // TODO: виведи назви через ", "
@@ -233,9 +229,9 @@
     { title: "Відкрити PR", done: true },
   ];
 
-  const hasUndone = tasks.some(task => task.done === false);
+  const hasUndone = tasks.some((task) => task.done === false);
 
-  const allDone = tasks.every(task => task.done === true)
+  const allDone = tasks.every((task) => task.done === true);
 
   console.log(`Є незроблені: ${hasUndone}`);
   console.log(`Усе зроблено: ${allDone}`);
@@ -244,22 +240,22 @@
 // ===== 3.1 · Що лежить в акумуляторі — ✅ пройдено
 // Мій прогноз: 0 + 5 | 5 + 10 | 15 + 20 | 35
 //   const nums = [5, 10, 20];
-//   
+//
 //   const total = nums.reduce((sum, n) => {
 //     console.log(sum + " + " + n);
 //     return sum + n;
 //   }, 0);
-//   
+//
 //   console.log(total);
 
 // ===== 3.2 · Забутий return — ✅ пройдено
 // Мій прогноз: undefined
 //   const nums = [5, 10, 20];
-//   
+//
 //   const total = nums.reduce((sum, n) => {
 //     sum + n;
 //   }, 0);
-//   
+//
 //   console.log(total);
 
 // ===== 3.3 · Сума кошика — ✅ пройдено
@@ -288,13 +284,11 @@
   const fruits = ["яблуко", "банан", "яблуко", "груша", "банан", "яблуко"];
 
   const counts = fruits.reduce((acc, fruit) => {
-  if (fruit in acc) {
-  acc[fruit]++;
-  } else { 
-  acc[fruit] = 0; 
-  acc[fruit]++
-  }
-  return acc
+    if (!(fruit in acc)) {
+      acc[fruit] = 0;
+    }
+    acc[fruit]++;
+    return acc;
   }, {});
 
   console.log(counts["яблуко"]);
@@ -311,14 +305,10 @@
     { title: "Live coding", status: "done" },
   ];
 
-  const grouped = tasks.reduce((acc, task) => { 
-  if ( task.status in acc) {
-  acc[task.status].push(task);
-  } else {
-  acc[task.status] = [];
-  acc[task.status].push(task);
-  }
-  return acc;
+  const grouped = tasks.reduce((acc, task) => {
+    task.status in acc ? acc[task.status] : (acc[task.status] = []);
+    acc[task.status].push(task);
+    return acc;
   }, {});
 
   console.log(grouped.todo.length);
@@ -330,10 +320,9 @@ console.log("       ==================");
 {
   const prices = [65, 45, 90, 30];
 
-  const max = prices.reduce((max, price) => price > max ? price : max, 0);
+  const max = prices.reduce((max, price) => (price > max ? price : max), 0);
 
-
-  console.log(`Найдорожче: ${max}`)
+  console.log(`Найдорожче: ${max}`);
 }
 
 // ===== 3.8 · Сума за категоріями (бонус) — ✅ пройдено
@@ -344,13 +333,9 @@ console.log("       ==================");
     { category: "їжа", price: 80 },
   ];
 
-  const totals = purchases.reduce((total, product) => { 
-  if (product["category"] in total) {
+ const totals = purchases.reduce((total, product) => { 
+  (product.category in total) ? total[product.category] : total[product.category] = 0;
   total[product.category] += product["price"];
-  } else {
-  total[product.category] = 0;
-  total[product.category] += product["price"]; 
-  }
   return total;
   }, {})
 
@@ -362,7 +347,10 @@ console.log("       ==================");
 {
   const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-  let newArr = nums.filter(numb => numb % 2 === 0).map((numb) => numb * numb).reduce((sum, numb) => sum + numb, 0);
+  let newArr = nums
+    .filter((numb) => numb % 2 === 0)
+    .map((numb) => numb * numb)
+    .reduce((sum, numb) => sum + numb, 0);
 
   console.log(`Сума квадратів парних: ${newArr}`);
 }
@@ -370,11 +358,11 @@ console.log("       ==================");
 // ===== 4.1 · Розпакувати об'єкт — ✅ пройдено
 // Мій прогноз: Оксана | 25 | undefined
 //   const user = { name: "Оксана", age: 25 };
-//   
+//
 //   const { name, age } = user;
 //   console.log(name);
 //   console.log(age);
-//   
+//
 //   const { city } = user;
 //   console.log(city);
 
@@ -382,7 +370,7 @@ console.log("       ==================");
 {
   const book = { title: "Кобзар", author: "Тарас Шевченко", year: 1840 };
 
-  const { title, author, year} = book;
+  const { title, author, year } = book;
 
   console.log(`${title}, ${author}, ${year}`);
 }
@@ -392,7 +380,7 @@ console.log("       ==================");
 //   const [first, second] = [10, 20, 30];
 //   console.log(first);
 //   console.log(second);
-//   
+//
 //   const [, , third] = [10, 20, 30];
 //   console.log(third);
 
@@ -407,9 +395,9 @@ console.log("       ==================");
 
 // ===== 4.5 · Деструктуризація в параметрах — ✅ пройдено
 {
-  function describe({ name, age }) { 
-  return `${name}, ${age} років`;
-  };
+  function describe({ name, age }) {
+    return `${name}, ${age} років`;
+  }
 
   console.log(describe({ name: "Оля", age: 25 }));
   console.log(describe({ name: "Іван", age: 30 }));
@@ -423,9 +411,9 @@ console.log("       ==================");
     { name: "Торт", price: 90 },
   ];
 
-   for (const { name, price } of menu) { 
-  console.log(`${name}: ${price} грн`);
-   }
+  for (const { name, price } of menu) {
+    console.log(`${name}: ${price} грн`);
+  }
 }
 
 // ===== 5.1 · Розсипати масив — ✅ пройдено
@@ -433,7 +421,7 @@ console.log("       ==================");
 //   const a = [1, 2];
 //   const b = [3, 4];
 //   console.log([...a, ...b]);
-//   
+//
 //   const copy = [...a];
 //   copy.push(99);
 //   console.log(a);
@@ -442,11 +430,11 @@ console.log("       ==================");
 // ===== 5.2 · Загадка const b = a — ✅ пройдено
 // Мій прогноз: 99 | 99 | 5
 //   const a = { score: 1 };
-//   
+//
 //   const b = a;
 //   b.score = 99;
 //   console.log(a.score);
-//   
+//
 //   const c = { ...a };
 //   c.score = 5;
 //   console.log(a.score);
@@ -467,7 +455,7 @@ console.log("       ==================");
 {
   const prices = [30, 10, 20];
 
-  const sorted = [...prices].sort( (a, b) => a - b);
+  const sorted = [...prices].sort((a, b) => a - b);
 
   console.log(sorted);
   console.log(prices);
@@ -482,9 +470,9 @@ console.log("       ==================");
 
 // ===== 5.6 · Скільки завгодно чисел — ✅ пройдено
 {
-  function sum(...numbers) { 
-  return numbers.reduce((total, numb) => total + numb, 0);
-   }
+  function sum(...numbers) {
+    return numbers.reduce((total, numb) => total + numb, 0);
+  }
 
   console.log(sum(1, 2));
   console.log(sum(1, 2, 3, 4));
@@ -493,9 +481,9 @@ console.log("       ==================");
 
 // ===== 5.7 · Кошик без мутацій (бонус) — ✅ пройдено
 {
-  function addToCart(cart, item) { 
-  return [...cart, item];
-   }
+  function addToCart(cart, item) {
+    return [...cart, item];
+  }
 
   const cart = ["кава"];
   const newCart = addToCart(cart, "торт");
@@ -503,4 +491,4 @@ console.log("       ==================");
   console.log(cart);
   console.log(newCart);
 }
-git 
+git;
