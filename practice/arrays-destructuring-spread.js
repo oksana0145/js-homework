@@ -26,7 +26,7 @@
   const queue = ["Оля", "Іван"];
 
   queue.push("Марта");
-  const served = queue.shift([0]);
+  const served = queue.shift();
 
 
   // TODO: Марта стає в кінець черги
@@ -40,7 +40,7 @@
 {
   const pets = ["кіт", "пес", "папуга"];
 
-  for (let pet of pets){
+  for (const pet of pets){
   console.log(pet);
   }
 
@@ -195,7 +195,7 @@
 
   // TODO: імена через map, рядок через join(", ")
   console.log(name);
-  console.log(adults.length);
+  console.log(joinName);
 }
 
 // ===== 2.6 · Пастка sort — ✅ пройдено
@@ -325,11 +325,12 @@
   console.log(grouped.done.map((task) => task.title).join(", "));
 }
 
+console.log("       ==================");
 // ===== 3.7 · Найдорожче (бонус) — ✅ пройдено
 {
   const prices = [65, 45, 90, 30];
 
-  const max = prices.reduce((max, price) => price > max ? price : max  );
+  const max = prices.reduce((max, price) => price > max ? price : max, 0);
 
 
   console.log(`Найдорожче: ${max}`)
@@ -502,3 +503,4 @@
   console.log(cart);
   console.log(newCart);
 }
+git 
