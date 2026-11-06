@@ -37,7 +37,7 @@ console.log("       Task: 3")
 function sum (...numbers) {
     let sum = 0;
 
-    for (let numb of numbers) {
+    for (const numb of numbers) {
         sum += numb;
     }
     return sum
@@ -54,5 +54,5 @@ console.log("       Task: 4")
 
 const arrNumb = [10, 15, 100, 30, 25];
 
-let maxNumb = Math.max(...arrNumb);
+const maxNumb = Math.max(...arrNumb);
 console.log(maxNumb);
