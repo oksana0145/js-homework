@@ -8,21 +8,26 @@ const wallet = {
   owner: "Оксана",
   balance: 100,
   deposit(sum) {
-    return this.balance = this.balance + sum;
+    this.balance = this.balance + sum;
   },
   withdraw(sum) {
     if (sum <= this.balance) {
-    return this.balance = this.balance - sum;
+    this.balance = this.balance - sum;
     } else {
-        console.log("Недостатньо коштів");
+       console.log("Недостатньо коштів");
     }
   },
 };
 
-wallet.deposit(50);
-wallet.withdraw(30);
-wallet.withdraw(500);
 console.log(wallet.balance);
+wallet.withdraw(50);
+console.log(wallet.balance);
+
+
+// wallet.deposit(50);
+// wallet.withdraw(30);
+// wallet.withdraw(500);
+// console.log(wallet.balance);
 
 
 
@@ -104,7 +109,7 @@ const product = { name: "Кава", price: 65, inStock: true, rating: 4.5 };
 let qty = 0;
 
 for (let numb in product) {
-if (typeof(product[numb]) === "number") {
+if (typeof product[numb] === "number") {
 qty = qty + 1
 }}
 
