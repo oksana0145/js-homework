@@ -52,7 +52,7 @@ const catalog2 = [
 const sortByDesc = catalog2.sort((price1, price2) => price2.price - price1.price);
 console.log(sortByDesc);
 
- console.log(sortByDesc === catalog2)
+ console.log(sortByDesc === catalog)
 // ============================
 console.log("       Task: 4")
 // ============================
