@@ -8,3 +8,6 @@
 // import "./11-object/11-object.js";
 // import "./practice/objects.js";
 import "./13-arrays/13-arays.js";
+// import "./15-spread-and-rest/15-spread-and-rest.js"
+// import "./14-destructuring/14-destructuring.js";
+// import "./live-coding/this.js"
