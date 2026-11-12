@@ -297,6 +297,7 @@
 }
 
 // ===== 3.6 · Задачі за статусом — ✅ пройдено
+console.log("   3.6")
 {
   const tasks = [
     { title: "Теорія", status: "done" },
@@ -306,7 +307,10 @@
   ];
 
   const grouped = tasks.reduce((acc, task) => {
-    task.status in acc ? acc[task.status] : (acc[task.status] = []);
+    if (!(task.status in acc)) {
+      acc[task.status] = []
+    } 
+    
     acc[task.status].push(task);
     return acc;
   }, {});
@@ -315,7 +319,6 @@
   console.log(grouped.done.map((task) => task.title).join(", "));
 }
 
-console.log("       ==================");
 // ===== 3.7 · Найдорожче (бонус) — ✅ пройдено
 {
   const prices = [65, 45, 90, 30];
@@ -326,6 +329,7 @@ console.log("       ==================");
 }
 
 // ===== 3.8 · Сума за категоріями (бонус) — ✅ пройдено
+console.log("   3.8")
 {
   const purchases = [
     { category: "їжа", price: 120 },
@@ -334,9 +338,12 @@ console.log("       ==================");
   ];
 
  const totals = purchases.reduce((total, product) => { 
-  (product.category in total) ? total[product.category] : total[product.category] = 0;
-  total[product.category] += product["price"];
-  return total;
+  if (!(product.category in total)) {
+    total[product.category] = 0;
+  }
+
+  total[product.category]  += product["price"]
+  return total
   }, {})
 
   console.log(totals["їжа"]);
@@ -491,4 +498,3 @@ console.log("       ==================");
   console.log(cart);
   console.log(newCart);
 }
-git;
