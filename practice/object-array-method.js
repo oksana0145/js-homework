@@ -149,16 +149,17 @@
 }
 
 // ===== 2.5 · Функція окремо — ✅ пройдено
+console.log("       2.5")
 {
   const names = ["Оля", "Марта", "Ян", "Іван"];
 
   function isLong(name) {
-  if (name.length > 3) {
-  return name;
-  }}
+  return name.length > 3
+};
 
   const long = names.filter(isLong);
   console.log(long);
+  console.log(isLong("Марта"));
 }
 
 // ===== 2.6 · Морозні дні — ✅ пройдено
@@ -171,6 +172,7 @@
 }
 
 // ===== 2.7 · filter для об'єктів — ✅ пройдено
+console.log("       2.7");
 {
   const products = [
     { name: "Кава", inStock: true },
@@ -178,13 +180,14 @@
     { name: "Торт", inStock: true },
   ];
 
-  const available = products.filter((product) => product.inStock === true)
+  const available = products.filter((product) => product.inStock)
 
   console.log(available.length);
   console.log(available[0].name);
 }
 
 // ===== 2.8 · Дві умови — ✅ пройдено
+console.log("     2.8")
 {
   const students = [
     { name: "Оля", age: 25, city: "Львів" },
@@ -192,7 +195,7 @@
     { name: "Марта", age: 30, city: "Київ" },
   ];
 
-  const result = students.filter((student) => student.age > 18 && student.city === "Львів")
+  const result = students.filter((student) => student.age >= 18 && student.city === "Львів")
 
   console.log(result.length);
   console.log(result[0].name);
@@ -278,6 +281,7 @@
 }
 
 // ===== 3.7 · Середній бал — ✅ пройдено
+console.log("     3.7")
 {
   const students = [
     { name: "Оля", grade: 90 },
@@ -285,8 +289,8 @@
     { name: "Марта", grade: 75 },
   ];
 
-  const total = students.reduce((sum, grade) => {
-  return sum + grade.grade;
+  const total = students.reduce((sum, student) => {
+  return sum + student.grade;
   } , 0);
 
   const avgr = total / students.length;
@@ -295,6 +299,7 @@
 }
 
 // ===== 3.8 · Скільки з кожного міста (бонус) — ✅ пройдено
+console.log("     3.8")
 {
   const students = [
     { name: "Оля", city: "Львів" },
@@ -303,9 +308,12 @@
   ];
 
   const counts = students.reduce( (city, student) => {
-  student["city"] in city ? city[student.city] : city[student.city] = 0;
-  city[student.city]++;
-  return city;
+    if (!(student["city"] in city)) {
+      city[student.city] = 0
+    }
+    city[student.city]++
+    return city
+
   }, {})
 
   console.log(counts["Львів"]);
