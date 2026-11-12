@@ -52,7 +52,7 @@ const catalog2 = [
 const sortByDesc = catalog2.sort((price1, price2) => price2.price - price1.price);
 console.log(sortByDesc);
 
-
+ console.log(sortByDesc === catalog2)
 // ============================
 console.log("       Task: 4")
 // ============================
@@ -116,14 +116,14 @@ const newProducts = [
     {category: "toys", name: "Barbie"},
     {category: "electronics", name: "Phone"},
     {category: "toys", name: "Car"},
-    {category: "electronics", name: "Computer"},
+    {category: "toys", name: "Computer"},
 ];
 
 const groupedByCategory = newProducts.reduce((groups, product) => {
     if (groups[product.category] === undefined) {
         groups[product.category] = [];
     }
-    groups[product.category].push(product)
+    groups[product.category].push(product.name)
 
     return groups
  } , {});
