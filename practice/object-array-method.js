@@ -1,0 +1,412 @@
+// Домашка: об'єкти, масиви і filter
+// Кожне завдання — у своєму блоці { }, щоб змінні з різних завдань не конфліктували
+
+// ===== 1.1 · Крапка чи дужки — ✅ пройдено
+// Мій прогноз: Рекс | 3 | undefined | Рекс
+//   const pet = { name: "Рекс", age: 3 };
+//   const key = "age";
+//   
+//   console.log(pet.name);
+//   console.log(pet[key]);
+//   console.log(pet.key);
+//   console.log(pet["name"]);
+
+// ===== 1.2 · Прочитай з об'єкта — ✅ пройдено
+{
+  const city = { name: "Львів", country: "Україна" };
+  console.log(`${city.name}, ${city.country}`);
+}
+
+// ===== 1.3 · Створи й зміни — ✅ пройдено
+{
+  const dog = { name: "Рекс", age: 3 };
+  dog.age = 4;
+  dog.breed = "вівчарка";
+
+  console.log(dog.age);
+  console.log(dog.breed);
+  console.log(Object.keys(dog).length);
+}
+
+// ===== 1.4 · Прибери зайве — ✅ пройдено
+{
+  const user = { login: "oksana", token: "abc", role: "student" };
+  delete user.token;
+
+  console.log("token" in user);
+  console.log("role" in user);
+}
+
+// ===== 1.5 · Значення за назвою — ✅ пройдено
+{
+  const car = { brand: "Toyota", year: 2020 };
+
+  function getValue(key) {
+  if (key in car) {
+  return car[key]
+  } else {
+  return `Немає такого поля`
+  };};
+
+  console.log(getValue("brand"));
+  console.log(getValue("color"));
+}
+
+// ===== 1.6 · Склад — ✅ пройдено
+{
+  const stock = { apples: 5, pears: 0, plums: 3 };
+  let total = 0;
+  for (const fruit in stock) {
+  console.log(`${fruit}: ${stock[fruit]}`);
+  total = total + stock[fruit];
+
+  }
+  console.log(`Усього: ${total}`);
+}
+
+// ===== 1.7 · Що є в наявності — ✅ пройдено
+{
+  const stock = { apples: 5, pears: 0, plums: 3 };
+
+  let total = 0;
+
+  for (const fruit in stock) {
+  if (stock[fruit] > 0) {
+  total++;
+  }
+  }
+  console.log(`Є в наявності: ${total}`);
+}
+
+// ===== 1.8 · Термометр — ✅ пройдено
+{
+  const thermo = {
+    celsius: 20,
+    toFahrenheit() {
+     return this.celsius * 9 / 5 + 32;
+    },
+  };
+
+  console.log(thermo.toFahrenheit());
+}
+
+// ===== 1.9 · Батарея — ✅ пройдено
+{
+  const phone = {
+    battery: 50,
+    charge(amount) {
+  this.battery = this.battery + amount
+
+  if (this.battery >= 100) {
+  return this.battery = 100;
+  }
+    },
+  };
+
+  phone.charge(30);
+  console.log(phone.battery);
+
+  phone.charge(40);
+  console.log(phone.battery);
+}
+
+// ===== 2.1 · filter крок за кроком — ✅ пройдено
+// Мій прогноз: 3 false | 12 true | 7 true  | [12, 7]
+//   const nums = [3, 12, 7];
+//   
+//   const big = nums.filter((n) => {
+//     console.log(n, n > 6);
+//     return n > 6;
+//   });
+//   
+//   console.log(big);
+
+// ===== 2.2 · Завжди так, завжди ні — ✅ пройдено
+// Мій прогноз: [1, 2, 3] | [] | [1, 2, 3]
+//   const nums = [1, 2, 3];
+//   
+//   console.log(nums.filter(() => true));
+//   console.log(nums.filter(() => false));
+//   console.log(nums);
+
+// ===== 2.3 · Забутий return — ⏳ ще не пройдено
+// Мій прогноз: []
+//   const nums = [1, 2, 3];
+//   
+//   const result = nums.filter((n) => {
+//     n > 1;
+//   });
+//   
+//   console.log(result);
+
+// ===== 2.4 · Від циклу до filter — ✅ пройдено
+{
+  const scores = [72, 45, 90, 58];
+
+  const passed = scores.filter((score)  => score >= 60);
+
+  console.log(passed);
+}
+
+// ===== 2.5 · Функція окремо — ✅ пройдено
+console.log("       2.5")
+{
+  const names = ["Оля", "Марта", "Ян", "Іван"];
+
+  function isLong(name) {
+  return name.length > 3
+};
+
+  const long = names.filter(isLong);
+  console.log(long);
+  console.log(isLong("Марта"));
+}
+
+// ===== 2.6 · Морозні дні — ✅ пройдено
+{
+  const temps = [3, -2, 5, -7, 0];
+
+  const cold = temps.filter((temp) => temp < 0);
+
+  console.log(cold);
+}
+
+// ===== 2.7 · filter для об'єктів — ✅ пройдено
+console.log("       2.7");
+{
+  const products = [
+    { name: "Кава", inStock: true },
+    { name: "Чай", inStock: false },
+    { name: "Торт", inStock: true },
+  ];
+
+  const available = products.filter((product) => product.inStock)
+
+  console.log(available.length);
+  console.log(available[0].name);
+}
+
+// ===== 2.8 · Дві умови — ✅ пройдено
+console.log("     2.8")
+{
+  const students = [
+    { name: "Оля", age: 25, city: "Львів" },
+    { name: "Іван", age: 17, city: "Львів" },
+    { name: "Марта", age: 30, city: "Київ" },
+  ];
+
+  const result = students.filter((student) => student.age >= 18 && student.city === "Львів")
+
+  console.log(result.length);
+  console.log(result[0].name);
+}
+
+// ===== 3.1 · map і filter: у чому різниця — ✅ пройдено
+// Мій прогноз: [false, true] | [10]
+//   const nums = [5, 10];
+//   
+//   console.log(nums.map((n) => n > 6));
+//   console.log(nums.filter((n) => n > 6));
+
+// ===== 3.2 · Рядок для кожного — ✅ пройдено
+{
+  const students = [
+    { name: "Оля", grade: 90 },
+    { name: "Іван", grade: 55 },
+    { name: "Марта", grade: 75 },
+  ];
+
+  const lines = students.map( (student) => `${student.name}: ${student.grade}`);
+
+  console.log(lines.join(", "));
+}
+
+// ===== 3.3 · Хто склав — ✅ пройдено
+{
+  const students = [
+    { name: "Оля", grade: 90 },
+    { name: "Іван", grade: 55 },
+    { name: "Марта", grade: 75 },
+  ];
+
+  const rating = students.filter( (student) => student.grade >= 60).map( (student) => `${student.name}`).join(", ");
+
+  console.log(rating);
+  // TODO: спершу filter, потім map, потім join
+}
+
+// ===== 3.4 · Знайти одного — ✅ пройдено
+{
+  const students = [
+    { name: "Оля", grade: 90 },
+    { name: "Іван", grade: 55 },
+  ];
+
+  function getGrade(name) {
+  const student = students.find((student) => name === student["name"]); 
+  return student ? student.grade : "Немає такого студента";
+  }
+
+  console.log(getGrade("Іван"));
+  console.log(getGrade("Петро"));
+}
+
+// ===== 3.5 · Перевірки — ✅ пройдено
+{
+  const students = [
+    { name: "Оля", grade: 90 },
+    { name: "Іван", grade: 55 },
+    { name: "Марта", grade: 75 },
+  ];
+
+  const someFailed = students.some( student => student.grade < 60)
+  const allAbove50 = students.every(student => student.grade >= 50)
+
+  console.log(someFailed);
+  console.log(allAbove50);
+}
+
+// ===== 3.6 · Рейтинг — ✅ пройдено
+{
+  const students = [
+    { name: "Оля", grade: 90 },
+    { name: "Іван", grade: 55 },
+    { name: "Марта", grade: 75 },
+  ];
+
+  const rating = [...students].sort((grade1, grade2) => grade2.grade - grade1.grade).map( student => student.name).join(", ");
+
+  console.log(rating);
+  console.log(students[1].name);
+}
+
+// ===== 3.7 · Середній бал — ✅ пройдено
+console.log("     3.7")
+{
+  const students = [
+    { name: "Оля", grade: 90 },
+    { name: "Іван", grade: 60 },
+    { name: "Марта", grade: 75 },
+  ];
+
+  const total = students.reduce((sum, student) => {
+  return sum + student.grade;
+  } , 0);
+
+  const avgr = total / students.length;
+
+  console.log(`Середній бал: ${avgr}`);
+}
+
+// ===== 3.8 · Скільки з кожного міста (бонус) — ✅ пройдено
+console.log("     3.8")
+{
+  const students = [
+    { name: "Оля", city: "Львів" },
+    { name: "Іван", city: "Київ" },
+    { name: "Марта", city: "Львів" },
+  ];
+
+  const counts = students.reduce( (city, student) => {
+    if (!(student["city"] in city)) {
+      city[student.city] = 0
+    }
+    city[student.city]++
+    return city
+
+  }, {})
+
+  console.log(counts["Львів"]);
+  console.log(counts["Київ"]);
+}
+
+// ===== 4.1 · Масив в об'єкті — ✅ пройдено
+// Мій прогноз: 4 | 3 | 3
+//   const student = { name: "Оля", grades: [5, 4, 3] };
+//   
+//   console.log(student.grades[1]);
+//   console.log(student.grades.length);
+//   console.log(student.grades[student.grades.length - 1]);
+
+// ===== 4.2 · Середня студентки — ✅ пройдено
+{
+  const student = { name: "Оля", grades: [5, 4, 3] };
+
+  const total = student.grades.reduce( (total, grade) => {
+  return total + grade;
+  }, 0)
+
+  const avrg = total / student.grades.length;
+  console.log(`Середня: ${avrg}`);
+}
+
+// ===== 4.3 · Табель — ✅ пройдено
+{
+  const students = [
+    { name: "Оля", grades: [5, 5] },
+    { name: "Іван", grades: [3, 4] },
+  ];
+   
+  for (let student of students) {
+  const sumGrades = student.grades.reduce( (total, grade) => {
+  return total + grade;
+  }, 0);
+  const avrg = sumGrades / student.grades.length;
+  console.log(`${student.name}: ${avrg}`);
+  };
+}
+
+// ===== 4.4 · Об'єкт як масив ключів — ✅ пройдено
+{
+  const prices = { coffee: 65, tea: 45, cake: 90 };
+
+   const expensive = Object.keys(prices).filter( product => prices[product] > 50);
+
+  console.log(expensive);
+}
+
+// ===== 4.5 · Сума значень — ✅ пройдено
+{
+  const prices = { coffee: 65, tea: 45, cake: 90 };
+
+  const sum =  Object.values(prices).reduce( (total, price) => {
+  return total + price;
+  }, 0);
+
+
+  console.log(`Разом: ${sum}`);
+}
+
+// ===== 4.6 · Кошик з методами — ✅ пройдено
+{
+  const cart = {
+    items: [],
+    add(item) {
+      this.items.push(item);
+    },
+    count() {
+      return this.items.length;
+    },
+  };
+
+  cart.add("кава");
+  cart.add("торт");
+  console.log(cart.count());
+  console.log(cart.items);
+}
+
+// ===== 4.7 · Бібліотека (бонус) — ✅ пройдено
+{
+  const library = {
+    books: [
+      { title: "Кобзар", available: true },
+      { title: "Тигролови", available: false },
+      { title: "Маруся", available: true },
+    ],
+    availableTitles() {
+  return this.books.filter(stock => stock.available).map(name => name["title"]).join(", ");
+    },
+  };
+
+  console.log(library.availableTitles());
+}
